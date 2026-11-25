@@ -8,4 +8,4 @@ Página estática publicada no GitHub Pages em https://resolvaioficial.com.br
 - `fonts/`, `img/`, `logo.svg`, `icone-*.png` — fontes e imagens (sem dependência externa).
 - `CNAME` — domínio.
 
-Antes de divulgar: trocar o e-mail e o Instagram de teste (procure "TESTE" no `index.html`) e confirmar o número em `site.js`.
+Antes de divulgar: confirmar o número do WhatsApp em `site.js`.
