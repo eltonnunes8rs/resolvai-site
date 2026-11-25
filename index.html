@@ -1,182 +1,104 @@
 <!doctype html>
-<html lang="pt-BR"><head>
+<html lang="pt-BR" class="scroll-smooth"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ResolvAÍ — orçamento de jardinagem no WhatsApp em até 2 horas</title>
+<title>ResolvAÍ — Jardinagem e Multisserviços em Francisco Beltrão e Marmeleiro</title>
 <meta name="description" content="Corte de grama, poda, roçada, plantio e limpeza em Francisco Beltrão e Marmeleiro. Orçamento pelo WhatsApp em até 2 horas, prestadores qualificados, pagamento com Pix.">
-<meta name="theme-color" content="#08190f">
-<meta property="og:image" content="https://resolvaioficial.com.br/logo-completa.png"><link rel="icon" type="image/png" href="favicon-32.png"><link rel="apple-touch-icon" href="icone-192.png">
-<link rel="stylesheet" href="fonts.css">
-<style>
-:root{--ink:#08190f;--fundo:#0d2a1b;--lima:#c4f04a;--lima-d:#a7d62f;--sal:#e8eee3;--mut:#9db8a6;--mut-c:#4b6455;--titulo:'Unbounded','Trebuchet MS',system-ui,sans-serif;--texto:'Hanken Grotesk',system-ui,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth;color-scheme:dark light}
-body{margin:0;font:400 1.0625rem/1.6 var(--texto);color:#eaf3ec;background:var(--ink);-webkit-font-smoothing:antialiased}
-a{color:inherit}.wrap{width:min(1180px,100% - 2rem);margin-inline:auto}
-:focus-visible{outline:3px solid var(--lima);outline-offset:3px;border-radius:6px}
-h1,h2,h3{font-family:var(--titulo);margin:0;font-weight:600;letter-spacing:-.03em}
-.btn{display:inline-flex;align-items:center;gap:.7rem;background:var(--lima);color:var(--ink);text-decoration:none;font:700 1.08rem var(--texto);padding:1.05rem 1.6rem;border-radius:999px;transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 0 0 0 rgba(196,240,74,.0)}
-.btn:hover{background:#d6ff62;box-shadow:0 0 0 7px rgba(196,240,74,.18)}
-.btn svg{width:24px;height:24px;flex:none}
-.btn.mini{font-size:.95rem;padding:.6rem 1.1rem}
-
-/* hero */
-.hero{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(1000px 600px at 78% 40%,#12402a 0%,transparent 70%),var(--ink)}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/curvas-de-nivel.svg) center/cover no-repeat;opacity:.3;mask-image:linear-gradient(180deg,#000 40%,transparent 100%)}
-.topo{display:flex;align-items:center;justify-content:space-between;padding-block:1.2rem}
-.marca{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:600 1.2rem var(--titulo);letter-spacing:-.02em}
-.marca img{width:38px;height:38px;object-fit:contain;background:#fff;border-radius:50%}
-.topo nav{display:flex;align-items:center;gap:1.6rem}.topo nav a:not(.btn){text-decoration:none;color:var(--mut);font-weight:500}.topo nav a:not(.btn):hover{color:#fff}
-@media (max-width:760px){.topo nav a.l{display:none}}
-.corpo{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;padding-block:3rem 5.5rem}
-.local{display:inline-flex;align-items:center;gap:.5rem;border:1px solid #2c5a41;border-radius:999px;padding:.4rem .9rem;font-size:.92rem;color:#cfe6d6;margin-bottom:1.6rem}
-.local::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lima);box-shadow:0 0 0 4px rgba(196,240,74,.2)}
-h1{font-size:clamp(2.2rem,5.4vw,4.5rem);line-height:1.04;font-weight:600;letter-spacing:-.045em}
-.sub{font-size:clamp(1.08rem,1.8vw,1.3rem);color:#b7d0be;max-width:34ch;margin:1.5rem 0 2.2rem}
-.acoes{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:center}
-.acoes a.sec{color:#cfe6d6;text-decoration:underline;text-underline-offset:5px;text-decoration-color:#3f7355}
-@media (max-width:920px){.corpo{grid-template-columns:1fr;padding-block:2rem 4rem}}
-
-/* celular escuro */
-.cena{position:relative;display:flex;justify-content:center}
-.fone{width:min(330px,86vw);background:#000;border:1px solid #2a3b32;border-radius:42px;padding:10px;box-shadow:0 0 0 1px #16251d,0 50px 90px -30px rgba(0,0,0,.9),0 0 120px -20px rgba(196,240,74,.18)}
-.tela{background:#0b141a;border-radius:33px;overflow:hidden}
-.tela header{display:flex;align-items:center;gap:.6rem;background:#1f2c34;padding:.85rem 1rem;color:#e9edef}
-.tela header img{width:34px;height:34px;object-fit:contain;border-radius:50%;background:#fff}.tela header b{display:block;line-height:1.1}.tela header small{color:#8696a0}
-.chat{padding:.9rem;display:flex;flex-direction:column;gap:.5rem;min-height:430px;background:#0b141a}
-.msg{max-width:86%;padding:.5rem .75rem;border-radius:12px;font-size:.94rem;line-height:1.35;opacity:0;transform:translateY(8px);animation:entra .45s ease forwards;color:#e9edef}
-.msg.cli{align-self:flex-end;background:#005c4b;border-top-right-radius:3px}.msg.bot{align-self:flex-start;background:#202c33;border-top-left-radius:3px}
-.msg:nth-child(1){animation-delay:.5s}.msg:nth-child(2){animation-delay:1.6s}.msg:nth-child(3){animation-delay:3s}.msg:nth-child(4){animation-delay:4.3s}.msg:nth-child(5){animation-delay:5.7s}
-@keyframes entra{to{opacity:1;transform:none}}
-.chip{position:absolute;background:var(--lima);color:var(--ink);font:700 .95rem var(--texto);padding:.55rem .95rem;border-radius:999px;box-shadow:0 12px 30px -8px rgba(0,0,0,.6);opacity:0;animation:entra .5s ease forwards}
-.chip.c1{left:-2.6rem;top:-1.2rem;animation-delay:6.1s}.chip.c2{right:-2rem;top:46%;background:#fff;animation-delay:6.5s}.chip.c3{left:-2.4rem;bottom:-1rem;background:#fff;animation-delay:6.9s}
-@media (max-width:920px){.chip.c1{left:0}.chip.c2{right:0}.chip.c3{left:0}.chip.c2{display:none}.cena{padding-block:1.2rem}}
-@media (prefers-reduced-motion:reduce){.msg,.chip{animation:none;opacity:1;transform:none}}
-
-/* claro */
-.claro{background:var(--sal);color:var(--ink)}
-.bloco{padding:6rem 0}
-h2{font-size:clamp(1.8rem,3.8vw,3rem);line-height:1.08;letter-spacing:-.04em}
-.intro{color:var(--mut-c);max-width:50ch;margin:1rem 0 3rem;font-size:1.1rem}
-
-/* serviços */
-.linhas{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
-.linhas li{display:grid;grid-template-columns:72px minmax(0,1.2fr) minmax(0,1fr);gap:1.5rem;align-items:center;padding:1.4rem .6rem;border-bottom:1px solid #b9c7bd;transition:background .18s}
-.linhas li:hover{background:var(--lima)}
-.linhas svg{width:54px;height:54px;color:var(--ink)}
-.linhas h3{font-size:clamp(1.15rem,2.2vw,1.65rem);line-height:1.15;letter-spacing:-.03em;font-weight:500}
-.linhas p{margin:0;color:var(--mut-c)}.linhas li:hover p{color:var(--ink)}
-@media (max-width:760px){.linhas li{grid-template-columns:56px 1fr;gap:.2rem 1rem}.linhas svg{width:44px;height:44px;grid-row:span 2}.linhas p{grid-column:2}}
-
-/* passos */
-.passos{background:var(--fundo);position:relative;overflow:hidden}
-.passos h2{max-width:20ch}
-.seq{list-style:none;margin:3.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0}
-.seq li{padding:0 1.4rem 0 0;border-top:1px solid #2c5a41;padding-top:1.4rem}
-.seq .n{display:block;font:600 clamp(3.2rem,5.2vw,4.6rem)/1 var(--titulo);color:transparent;-webkit-text-stroke:1.5px var(--lima);letter-spacing:-.05em;margin-bottom:1rem}
-.seq h3{font:600 1.05rem/1.25 var(--titulo);letter-spacing:-.02em;margin-bottom:.4rem}.seq p{margin:0;color:var(--mut);font-size:.98rem}
-@media (max-width:900px){.seq{grid-template-columns:1fr}.seq li{display:grid;grid-template-columns:84px 1fr;gap:0 1rem;padding:1.2rem 0}.seq .n{grid-row:span 2;font-size:3rem;margin:0}}
-
-/* onde */
-.onde{position:relative;overflow:hidden;isolation:isolate}
-.onde::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/curvas-de-nivel.svg) center/cover;opacity:.5;filter:hue-rotate(0deg) saturate(.4) brightness(.55)}
-.cidades{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
-.cidade{border-top:2px solid var(--ink);padding-top:1.1rem}
-.cidade b{display:block;font:600 clamp(1.7rem,4.2vw,3.2rem)/1.05 var(--titulo);letter-spacing:-.045em}
-.cidade small{display:block;margin-top:.5rem;color:var(--mut-c);font-size:.95rem}
-@media (max-width:700px){.cidades{grid-template-columns:1fr}}
-
-/* confiança */
-.pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:2.5rem}
-.pilares div{border-top:2px solid var(--lima);padding-top:1.1rem}
-.pilares h3{font:600 1.2rem/1.2 var(--titulo);letter-spacing:-.025em;margin-bottom:.5rem}.pilares p{margin:0;color:var(--mut)}
-@media (max-width:820px){.pilares{grid-template-columns:1fr}}
-
-#avaliacoes[hidden]{display:none}
-.depoimentos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin:2rem 0 0;padding:0;list-style:none}
-.depoimentos blockquote{margin:0;font:500 1.2rem/1.4 var(--titulo);letter-spacing:-.02em}.depoimentos .estrelas{color:var(--lima)}.depoimentos footer{margin-top:.5rem;color:var(--mut)}
-
-/* final */
-.final{position:relative;overflow:hidden;isolation:isolate;background:var(--ink);text-align:left}
-.final::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/curvas-de-nivel.svg) center/cover;opacity:.22}
-.final h2{font-size:clamp(2.2rem,6vw,4.8rem);line-height:1.02;max-width:15ch;letter-spacing:-.05em}
-.final p{color:#b7d0be;font-size:1.15rem;max-width:44ch;margin:1.4rem 0 2.2rem}
-.final ul{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem 2.5rem;margin:2.6rem 0 0;padding:0;color:var(--mut)}.final ul a{color:#fff}
-.rodape{background:#050f09;color:#7f9c89;padding:1.5rem 0 2.2rem;font-size:.92rem}.rodape .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem}.rodape a{color:#c9dccf}
-</style></head>
-<body>
-<header class="hero">
-  <div class="wrap"><div class="topo">
-    <a class="marca" href="#"><img src="simbolo.png" alt="" width="36" height="36">ResolvAÍ</a>
-    <nav><a class="l" href="#servicos">Serviços</a><a class="l" href="#como-funciona">Como funciona</a><a class="l" href="#onde">Onde atendemos</a><a class="btn mini" data-zap href="#">Pedir orçamento</a></nav>
-  </div></div>
-  <div class="wrap corpo">
-    <div>
-      <span class="local">Francisco Beltrão e Marmeleiro</span>
-      <h1>Orçamento de jardinagem no WhatsApp em até 2 horas.</h1>
-      <p class="sub">Mande as fotos, o endereço e o tamanho do terreno. Um prestador qualificado avalia e o orçamento volta na conversa.</p>
-      <div class="acoes"><a class="btn" data-zap href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-2.9.9.9-2.8-.2-.3a8.1 8.1 0 0 1 6.8-12.6Zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.4 1 2.9.8 3.4.7.5 0 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.4-.5-.6-.5h-.6Z"/></svg> Pedir orçamento no WhatsApp</a><a class="sec" href="#como-funciona">Ver como funciona</a></div>
-    </div>
-    <div class="cena">
-      <span class="chip c1">⏱ Orçamento em até 2 h</span><span class="chip c2">Pague com Pix</span><span class="chip c3">★ Prestadores avaliados</span>
-      <div class="fone" role="img" aria-label="Exemplo de conversa: o cliente pede serviço, envia fotos e recebe a confirmação de que o orçamento chega em até 2 horas.">
-        <div class="tela"><header><img src="simbolo.png" alt=""><span><b>ResolvAÍ</b><small>Atendimento</small></span></header>
-          <div class="chat" aria-hidden="true">
-            <div class="msg cli">Oi! Preciso cortar a grama e podar a cerca viva.</div>
-            <div class="msg bot">Olá! Me envie fotos do local, o endereço e o tamanho do terreno.</div>
-            <div class="msg cli">📷 3 fotos<br>Bairro Centro, uns 400 m²</div>
-            <div class="msg bot">Recebi tudo. Seu orçamento chega em até 2 horas.</div>
-            <div class="msg bot">Aprovado? Pague com Pix e escolha o horário.</div>
-          </div></div>
-      </div>
-    </div>
-  </div>
-</header>
-
+<meta name="theme-color" content="#4A5D23">
+<meta property="og:title" content="ResolvAÍ — Jardinagem e Multisserviços"><meta property="og:description" content="Orçamento pelo WhatsApp em até 2 horas em Francisco Beltrão e Marmeleiro."><meta property="og:image" content="https://resolvaioficial.com.br/logo-completa.png">
+<link rel="icon" type="image/png" href="favicon-32.png"><link rel="apple-touch-icon" href="icone-192.png">
+<link rel="preload" href="fonts/montserrat-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-graphite font-sans antialiased selection:bg-leaf-soft selection:text-olive">
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-olive/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+<a href="#inicio" class="flex items-center gap-3" aria-label="ResolvAÍ, página inicial">
+<img src="simbolo.png" alt="" class="w-12 h-12 sm:w-14 sm:h-14 object-contain">
+<span class="flex flex-col leading-none"><span class="font-heading font-extrabold text-2xl sm:text-[26px] tracking-tight text-olive">Resolv<span class="text-accent">AÍ</span></span><span class="mt-1 text-[9px] sm:text-[10px] font-semibold tracking-[.14em] uppercase">Jardinagem e Multisserviços</span></span></a>
+<nav class="hidden md:flex items-center gap-8" aria-label="Menu principal">
+<a class="text-sm font-medium hover:text-olive" href="#servicos">Serviços</a><a class="text-sm font-medium hover:text-olive" href="#como-funciona">Como funciona</a><a class="text-sm font-medium hover:text-olive" href="#onde">Onde atendemos</a>
+<a data-zap href="#" class="bg-accent hover:bg-accent-hover text-white font-heading font-semibold text-sm px-5 py-2.5 rounded-xl shadow-sm transition-colors">Pedir orçamento</a></nav>
+<a data-zap href="#" class="md:hidden bg-accent text-white font-heading font-semibold text-sm px-4 py-2.5 rounded-xl">Orçamento</a>
+</div></header>
 <main>
-<section class="claro bloco" id="servicos"><div class="wrap">
-  <h2>O que a gente resolve</h2>
-  <p class="intro">Cada serviço é orçado depois de ver as fotos, porque o valor depende do tamanho e da situação do terreno.</p>
-  <ul class="linhas">
-    <li><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 38h30l5-12h8"/><rect x="12" y="38" width="30" height="10" rx="3"/><circle cx="19" cy="52" r="5"/><circle cx="38" cy="52" r="5"/><path d="M47 26l8-14h5"/><path d="M4 58l2-8M10 58l1-6M56 58l-1-6M61 58l-2-8"/></svg><h3>Corte de grama</h3><p>Gramados de casas, comércios e terrenos, do pequeno ao grande.</p></li>
-    <li><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 52C10 28 30 10 54 14 40 18 30 30 28 46Z"/><path d="M28 46l-12 12"/><path d="M40 58l1-7M46 58l1-9M52 58l-1-6"/></svg><h3>Capinagem e roçada</h3><p>Limpeza de mato e terreno baldio para deixar o espaço em ordem.</p></li>
-    <li><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="19" cy="51" r="7"/><circle cx="45" cy="51" r="7"/><path d="M22 45L46 11M42 45L18 11"/><circle cx="32" cy="28" r="2"/></svg><h3>Poda de árvores, arbustos e cercas vivas</h3><p>Poda com acabamento e cuidado com a saúde das plantas.</p></li>
-    <li><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 58V30M14 58h36"/><path d="M32 38C20 38 14 30 14 20 26 20 32 28 32 38Z"/><path d="M32 32C32 22 40 14 52 14 52 26 44 32 32 32Z"/></svg><h3>Plantio e replantio</h3><p>Canteiros, jardins e reformas de áreas verdes.</p></li>
-    <li><svg class="" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M46 6L30 36"/><path d="M20 36h24l6 22H14Z"/><path d="M25 42l-3 14M32 42v14M39 42l3 14"/></svg><h3>Limpeza e varrição</h3><p>Pátios, calçadas e áreas externas limpos depois do serviço.</p></li>
-  </ul>
+<section id="inicio" class="bg-sage overflow-hidden"><div class="max-w-7xl mx-auto grid lg:grid-cols-2 lg:min-h-[560px]">
+<div class="flex flex-col justify-center px-6 sm:px-10 lg:px-12 py-14 lg:py-20">
+<p class="inline-flex items-center gap-2 bg-white border border-olive/15 text-olive text-xs font-semibold px-3.5 py-1.5 rounded-full w-fit mb-6"><span class="w-2 h-2 rounded-full bg-leaf"></span>Francisco Beltrão e Marmeleiro</p>
+<h1 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[46px] text-olive leading-[1.15] tracking-tight">Cuidado completo para seu jardim e sua casa</h1>
+<p class="mt-5 text-base sm:text-lg leading-relaxed max-w-xl">Jardinagem e multisserviços com praticidade e confiança. Mande as fotos pelo WhatsApp e receba o orçamento em até 2 horas.</p>
+<div class="mt-8 flex flex-col sm:flex-row gap-3.5">
+<a data-zap href="#" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white font-heading font-semibold px-7 py-3.5 rounded-xl shadow-md transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-2.9.9.9-2.8-.2-.3a8.1 8.1 0 0 1 6.8-12.6Zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.7-.4l-1.9-.9c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.8-1.4-1.700-1.600-2-.2-.3 0-.4.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.200c-.2-.5-.5-.5-.7-.5Z"/></svg>Pedir orçamento</a>
+<a href="#servicos" class="bg-white hover:bg-leaf-soft text-olive border-2 border-olive/25 font-heading font-semibold px-7 py-3.5 rounded-xl text-center transition-colors">Ver serviços</a></div>
+<ul class="mt-9 pt-6 border-t border-olive/10 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
+<li class="flex items-center gap-1.5"><span class="text-leaf" aria-hidden="true">✓</span>Orçamento em até 2 horas</li><li class="flex items-center gap-1.5"><span class="text-leaf" aria-hidden="true">✓</span>Prestadores de confiança</li><li class="flex items-center gap-1.5"><span class="text-leaf" aria-hidden="true">✓</span>Pague com Pix</li></ul></div>
+<div class="relative min-h-[280px] sm:min-h-[380px] lg:min-h-full bg-gradient-to-br from-olive via-leaf to-olive-dark">
+<img src="simbolo-claro.png" alt="" class="absolute inset-0 m-auto w-2/3 max-w-sm opacity-25 object-contain" aria-hidden="true">
+<img id="heroImg" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1400&q=80" alt="Jardim residencial bem cuidado ao lado de uma casa" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+</div></div></section>
+
+<section id="servicos" class="py-16 sm:py-24"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-2xl"><h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-olive">O que a gente resolve</h2>
+<p class="mt-3">Cada serviço é orçado depois de ver as fotos, porque o valor depende do tamanho e da situação do terreno.</p></div>
+<div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<article class="bg-white rounded-2xl p-7 shadow-card border border-olive/10 hover:border-leaf/50 transition-colors flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-leaf-soft text-olive flex items-center justify-center shrink-0"><svg class="w-7 h-7"  viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 38h30l5-12h8"/><rect x="12" y="38" width="30" height="10" rx="3"/><circle cx="19" cy="52" r="5"/><circle cx="38" cy="52" r="5"/><path d="M47 26l8-14h5"/><path d="M4 58l2-8M10 58l1-6M56 58l-1-6M61 58l-2-8"/></svg></div>
+<h3 class="mt-4 font-heading font-bold text-lg text-olive">Corte de grama</h3>
+<p class="mt-2 text-sm leading-relaxed">Gramados de casas, comércios e terrenos, do pequeno ao grande.</p></article>
+<article class="bg-white rounded-2xl p-7 shadow-card border border-olive/10 hover:border-leaf/50 transition-colors flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-leaf-soft text-olive flex items-center justify-center shrink-0"><svg class="w-7 h-7"  viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 52C10 28 30 10 54 14 40 18 30 30 28 46Z"/><path d="M28 46l-12 12"/><path d="M40 58l1-7M46 58l1-9M52 58l-1-6"/></svg></div>
+<h3 class="mt-4 font-heading font-bold text-lg text-olive">Capinagem e roçada</h3>
+<p class="mt-2 text-sm leading-relaxed">Limpeza de mato e terreno baldio para deixar o espaço em ordem.</p></article>
+<article class="bg-white rounded-2xl p-7 shadow-card border border-olive/10 hover:border-leaf/50 transition-colors flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-leaf-soft text-olive flex items-center justify-center shrink-0"><svg class="w-7 h-7"  viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="19" cy="51" r="7"/><circle cx="45" cy="51" r="7"/><path d="M22 45L46 11M42 45L18 11"/><circle cx="32" cy="28" r="2"/></svg></div>
+<h3 class="mt-4 font-heading font-bold text-lg text-olive">Poda de árvores, arbustos e cercas vivas</h3>
+<p class="mt-2 text-sm leading-relaxed">Poda com acabamento e cuidado com a saúde das plantas.</p></article>
+<article class="bg-white rounded-2xl p-7 shadow-card border border-olive/10 hover:border-leaf/50 transition-colors flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-leaf-soft text-olive flex items-center justify-center shrink-0"><svg class="w-7 h-7"  viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 58V30M14 58h36"/><path d="M32 38C20 38 14 30 14 20 26 20 32 28 32 38Z"/><path d="M32 32C32 22 40 14 52 14 52 26 44 32 32 32Z"/></svg></div>
+<h3 class="mt-4 font-heading font-bold text-lg text-olive">Plantio e replantio</h3>
+<p class="mt-2 text-sm leading-relaxed">Canteiros, jardins e reformas de áreas verdes.</p></article>
+<article class="bg-white rounded-2xl p-7 shadow-card border border-olive/10 hover:border-leaf/50 transition-colors flex flex-col">
+<div class="w-12 h-12 rounded-xl bg-leaf-soft text-olive flex items-center justify-center shrink-0"><svg class="w-7 h-7"  viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M46 6L30 36"/><path d="M20 36h24l6 22H14Z"/><path d="M25 42l-3 14M32 42v14M39 42l3 14"/></svg></div>
+<h3 class="mt-4 font-heading font-bold text-lg text-olive">Limpeza e varrição</h3>
+<p class="mt-2 text-sm leading-relaxed">Pátios, calçadas e áreas externas limpos depois do serviço.</p></article>
+<article class="bg-olive text-white rounded-2xl p-7 flex flex-col justify-between"><div><h3 class="font-heading font-bold text-lg">Precisa de outro serviço?</h3><p class="mt-2 text-sm text-white/85 leading-relaxed">Conte o que precisa na conversa. Se a gente puder resolver, o orçamento vem em até 2 horas.</p></div>
+<a data-zap href="#" class="mt-6 inline-flex w-fit bg-accent hover:bg-accent-hover text-white font-heading font-semibold text-sm px-5 py-2.5 rounded-xl transition-colors">Falar no WhatsApp</a></article>
+</div></div></section>
+
+<section id="como-funciona" class="bg-white py-16 sm:py-24 border-t border-olive/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-olive max-w-2xl">Do pedido ao serviço feito, sem sair do WhatsApp</h2>
+<ol class="mt-10 grid sm:grid-cols-2 lg:grid-cols-5 gap-5"><li class="bg-sage/60 rounded-2xl p-6 border border-olive/10"><span class="w-11 h-11 rounded-xl bg-olive text-white font-heading font-extrabold flex items-center justify-center">1</span><h3 class="mt-4 font-heading font-bold text-olive">Chame no WhatsApp</h3><p class="mt-1.5 text-sm leading-relaxed">Conte o que precisa.</p></li><li class="bg-sage/60 rounded-2xl p-6 border border-olive/10"><span class="w-11 h-11 rounded-xl bg-leaf text-white font-heading font-extrabold flex items-center justify-center">2</span><h3 class="mt-4 font-heading font-bold text-olive">Envie fotos e endereço</h3><p class="mt-1.5 text-sm leading-relaxed">Com o tamanho aproximado do terreno.</p></li><li class="bg-sage/60 rounded-2xl p-6 border border-olive/10"><span class="w-11 h-11 rounded-xl bg-olive text-white font-heading font-extrabold flex items-center justify-center">3</span><h3 class="mt-4 font-heading font-bold text-olive">Receba o orçamento</h3><p class="mt-1.5 text-sm leading-relaxed">Em até 2 horas, na própria conversa.</p></li><li class="bg-sage/60 rounded-2xl p-6 border border-olive/10"><span class="w-11 h-11 rounded-xl bg-leaf text-white font-heading font-extrabold flex items-center justify-center">4</span><h3 class="mt-4 font-heading font-bold text-olive">Pague com Pix</h3><p class="mt-1.5 text-sm leading-relaxed">E escolha o melhor horário.</p></li><li class="bg-sage/60 rounded-2xl p-6 border border-olive/10"><span class="w-11 h-11 rounded-xl bg-olive text-white font-heading font-extrabold flex items-center justify-center">5</span><h3 class="mt-4 font-heading font-bold text-olive">Serviço feito</h3><p class="mt-1.5 text-sm leading-relaxed">Fotos do resultado e a sua avaliação.</p></li></ol>
+<div class="mt-10 grid md:grid-cols-3 gap-6">
+<div class="border-l-4 border-leaf pl-5"><h3 class="font-heading font-bold text-olive">Prestadores de confiança e qualificados</h3><p class="mt-1.5 text-sm leading-relaxed">A equipe é escolhida pelo ResolvAÍ e a avaliação dos clientes pesa em cada indicação.</p></div>
+<div class="border-l-4 border-leaf pl-5"><h3 class="font-heading font-bold text-olive">Orçamento revisado</h3><p class="mt-1.5 text-sm leading-relaxed">Conferimos cada orçamento antes de ele chegar a você.</p></div>
+<div class="border-l-4 border-leaf pl-5"><h3 class="font-heading font-bold text-olive">Pix e horário reservado</h3><p class="mt-1.5 text-sm leading-relaxed">Pagamento simples e o horário fica garantido.</p></div></div>
 </div></section>
 
-<section class="passos bloco" id="como-funciona"><div class="wrap">
-  <h2>Do pedido ao serviço feito, sem sair do WhatsApp</h2>
-  <ol class="seq">
-    <li><span class="n">1</span><h3>Chame no WhatsApp</h3><p>Conte o que precisa.</p></li>
-    <li><span class="n">2</span><h3>Envie fotos e endereço</h3><p>Com o tamanho aproximado do terreno.</p></li>
-    <li><span class="n">3</span><h3>Receba o orçamento</h3><p>Em até 2 horas, na própria conversa.</p></li>
-    <li><span class="n">4</span><h3>Pague com Pix</h3><p>E escolha o melhor horário.</p></li>
-    <li><span class="n">5</span><h3>Serviço feito</h3><p>Fotos do resultado e a sua avaliação.</p></li>
-  </ol>
-  <div class="pilares">
-    <div><h3>Prestadores de confiança e qualificados</h3><p>A equipe é escolhida pelo ResolvAÍ e a avaliação dos clientes pesa em cada indicação.</p></div>
-    <div><h3>Orçamento revisado</h3><p>Conferimos cada orçamento antes de ele chegar a você.</p></div>
-    <div><h3>Pix e horário reservado</h3><p>Pagamento simples e o horário fica garantido.</p></div>
-  </div>
-</div></section>
+<section id="onde" class="bg-sage py-16 sm:py-20 border-t border-olive/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-olive max-w-3xl">Atendemos o Sudoeste do Paraná, começando por duas cidades.</h2>
+<div class="mt-8 flex flex-wrap gap-4"><span class="bg-white border border-olive/15 rounded-2xl px-6 py-4 font-heading font-bold text-olive text-lg">Francisco Beltrão</span><span class="bg-white border border-olive/15 rounded-2xl px-6 py-4 font-heading font-bold text-olive text-lg">Marmeleiro</span></div></div></section>
 
-<section class="claro bloco onde" id="onde"><div class="wrap">
-  <h2>Atendemos o Sudoeste do Paraná, começando por duas cidades.</h2>
-  <div class="cidades">
-    <div class="cidade"><b>Francisco Beltrão</b><small>26°04′ S · 53°03′ O</small></div>
-    <div class="cidade"><b>Marmeleiro</b><small>26°09′ S · 53°01′ O</small></div>
-  </div>
-</div></section>
+<section id="avaliacoes" class="py-16 sm:py-20" hidden><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-olive">O que os clientes dizem</h2><ul id="lista-avaliacoes" class="mt-8 grid md:grid-cols-3 gap-6"></ul></div></section>
 
-<section id="avaliacoes" class="claro bloco" hidden><div class="wrap"><h2>O que os clientes dizem</h2><ul class="depoimentos" id="lista-avaliacoes"></ul></div></section>
-
-<section class="final bloco" id="contato"><div class="wrap">
-  <h2>Seu orçamento começa numa mensagem.</h2>
-  <p>Responda a poucas perguntas e envie as fotos do local. O resto a gente resolve.</p>
-  <a class="btn" data-zap href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-2.9.9.9-2.8-.2-.3a8.1 8.1 0 0 1 6.8-12.6Zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.4 1 2.9.8 3.4.7.5 0 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.4-.5-.6-.5h-.6Z"/></svg> Pedir orçamento no WhatsApp</a>
-  <ul><li>E-mail: <a href="mailto:resolvaioficial@gmail.com">resolvaioficial@gmail.com</a></li><li>Instagram: <a href="https://www.instagram.com/resolvaioficial/" rel="noopener" target="_blank">@resolvaioficial</a></li></ul>
-</div></section>
+<section id="contato" class="bg-sage py-16 sm:py-24 border-t border-olive/10"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-white rounded-3xl shadow-soft border border-olive/10 overflow-hidden grid lg:grid-cols-5">
+<div class="lg:col-span-2 bg-olive text-white p-8 sm:p-10 flex flex-col justify-between">
+<div><h2 class="font-heading font-extrabold text-2xl sm:text-3xl leading-tight">Peça seu orçamento</h2>
+<p class="mt-4 text-sm text-white/85 leading-relaxed">Preencha ao lado e a conversa abre no WhatsApp com tudo pronto. Depois é só enviar as fotos do local.</p></div>
+<ul class="mt-8 space-y-2 text-sm text-white/85"><li>E-mail: <a class="underline" href="mailto:resolvaioficial@gmail.com">resolvaioficial@gmail.com</a></li><li>Instagram: <a class="underline" href="https://www.instagram.com/resolvaioficial/" rel="noopener" target="_blank">@resolvaioficial</a></li></ul></div>
+<form id="form-pedido" class="lg:col-span-3 p-8 sm:p-10 space-y-5" novalidate>
+<div><label for="f-serv" class="block text-sm font-semibold text-olive mb-1.5">Serviço</label><select id="f-serv" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm bg-white focus:border-olive focus:ring-2 focus:ring-olive/20 focus:outline-none"><option>Corte de grama</option><option>Capinagem e roçada</option><option>Poda de árvores, arbustos e cercas vivas</option><option>Plantio e replantio</option><option>Limpeza e varrição</option><option>Outro serviço</option></select></div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div><label for="f-nome" class="block text-sm font-semibold text-olive mb-1.5">Seu nome</label><input id="f-nome" type="text" autocomplete="name" placeholder="Ex.: Maria Silva" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-olive focus:ring-2 focus:ring-olive/20 focus:outline-none"></div>
+<div><label for="f-cid" class="block text-sm font-semibold text-olive mb-1.5">Cidade</label><select id="f-cid" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm bg-white focus:border-olive focus:ring-2 focus:ring-olive/20 focus:outline-none"><option>Francisco Beltrão</option><option>Marmeleiro</option></select></div></div>
+<div><label for="f-desc" class="block text-sm font-semibold text-olive mb-1.5">Conte o que precisa <span class="font-normal text-graphite/70">(opcional)</span></label><textarea id="f-desc" rows="3" placeholder="Ex.: cortar a grama do quintal e podar a cerca viva, uns 400 m²" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm resize-none focus:border-olive focus:ring-2 focus:ring-olive/20 focus:outline-none"></textarea></div>
+<p id="f-erro" class="hidden rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700 font-medium" role="alert">Escreva seu nome para continuar.</p>
+<button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white font-heading font-bold py-3.5 px-6 rounded-xl shadow-md transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.4 15.1L2 22l5-1.6A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-2.9.9.9-2.8-.2-.3a8.1 8.1 0 0 1 6.8-12.6Zm-3 3.6c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.7-.4l-1.9-.9c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.8-1.4-1.700-1.600-2-.2-.3 0-.4.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.200c-.2-.5-.5-.5-.7-.5Z"/></svg>Abrir conversa no WhatsApp</button>
+</form></div></div></section>
 </main>
-<footer class="rodape"><div class="wrap"><span>© <span id="ano">2026</span> ResolvAÍ · Francisco Beltrão e Marmeleiro, PR</span><a href="https://app.resolvaioficial.com.br">Entrar no app (equipe)</a></div></footer>
+<footer class="bg-olive text-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+<div class="flex items-center gap-3"><img src="simbolo-claro.png" alt="" class="w-12 h-12 object-contain"><span class="flex flex-col leading-none"><span class="font-heading font-extrabold text-2xl tracking-tight">Resolv<span class="text-accent">AÍ</span></span><span class="mt-1 text-[9px] font-semibold tracking-[.14em] uppercase text-leaf-soft">Jardinagem e Multisserviços</span></span></div>
+<nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/85" aria-label="Rodapé"><a class="hover:text-accent" href="#servicos">Serviços</a><a class="hover:text-accent" href="#como-funciona">Como funciona</a><a class="hover:text-accent" href="#onde">Onde atendemos</a><a class="hover:text-accent" href="https://app.resolvaioficial.com.br">Entrar no app (equipe)</a></nav></div>
+<p class="mt-8 pt-6 border-t border-white/15 text-xs text-white/70">© <span id="ano">2026</span> ResolvAÍ Jardinagem e Multisserviços · Francisco Beltrão e Marmeleiro, PR</p></div></footer>
 <script src="site.js"></script>
 </body></html>
