@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ResolvAÍ">
+  <rect width="512" height="512" rx="112" fill="#2f7d4f"/>
+  <path d="M148 128h216a44 44 0 0 1 44 44v128a44 44 0 0 1-44 44H250l-78 62v-62h-24a44 44 0 0 1-44-44V172a44 44 0 0 1 44-44z" fill="#fff"/>
+  <path d="M190 248l47 47 90-98" fill="none" stroke="#2f7d4f" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
